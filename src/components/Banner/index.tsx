@@ -1,12 +1,16 @@
 import { Image, Category, Name } from './styles'
 
-import bgPerfil from '../../assets/images/background-perfil.png'
+type BannerProps = {
+  capa: string
+  tipo: string
+  titulo: string
+}
 
-const Banner = () => (
-  <Image style={{ backgroundImage: `url(${bgPerfil})` }}>
+const Banner = ({ capa, tipo, titulo }: BannerProps) => (
+  <Image style={{ backgroundImage: `url(${capa})` }}>
     <div className="container">
-      <Category>Italiana</Category>
-      <Name>La Dolce Vita Trattoria</Name>
+      <Category>{tipo}</Category>
+      <Name>{titulo}</Name>
     </div>
   </Image>
 )

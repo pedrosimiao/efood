@@ -6,7 +6,7 @@ import Profile from './pages/Profile'
 const RouteTrack = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/profile" element={<Profile />} />
+    <Route path="/restaurant/:id" element={<Profile />} />
   </Routes>
 )
 

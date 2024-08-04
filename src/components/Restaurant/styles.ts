@@ -12,6 +12,12 @@ export const RestaurantCard = styled.div`
     margin: 0;
     padding: 0;
     display: block;
+    width: 472px;
+    height: 217px;
+    object-fit: fill;
+    display: flex;
+    justify-content: center;
+    align-self: center;
   }
 
   ${TagContainer} {
@@ -54,6 +60,8 @@ export const Score = styled.div`
 
   img {
     margin-left: 8px;
+    width: 21px;
+    height: 21px;
   }
 `
 export const Description = styled.p`

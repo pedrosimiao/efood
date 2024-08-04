@@ -14,6 +14,7 @@ import {
 import star from '../../assets/images/star-icon.png'
 
 type Props = {
+  id: number
   image: string
   title: string
   sugestionOfTheWeek?: boolean
@@ -23,39 +24,49 @@ type Props = {
 }
 
 const Restaurant = ({
+  id,
   image,
   title,
   sugestionOfTheWeek = false,
   culinary,
   score,
   description
-}: Props) => (
-  <RestaurantCard>
-    <img src={image} alt={title} />
-    <TagsContainer>
-      {sugestionOfTheWeek && <Tag>Destaque da semana</Tag>}
-      <Tag>{culinary}</Tag>
-    </TagsContainer>
-    <InfoContainer>
-      <TitleScoreContainer>
-        <Title>{title}</Title>
-        <Score>
-          <h3>{score}</h3>
-          <img src={star} />
-        </Score>
-      </TitleScoreContainer>
-      <Description>{description}</Description>
-      {sugestionOfTheWeek ? (
-        <Button type="button" category="restaurant" title={title}>
+}: Props) => {
+  const getDescription = (description: string) => {
+    if (description.length > 272) {
+      return description.slice(0, 269) + '...'
+    }
+
+    return description
+  }
+
+  return (
+    <RestaurantCard>
+      <img src={image} alt={title} />
+      <TagsContainer>
+        {sugestionOfTheWeek && <Tag>Destaque da semana</Tag>}
+        <Tag>{culinary}</Tag>
+      </TagsContainer>
+      <InfoContainer>
+        <TitleScoreContainer>
+          <Title>{title}</Title>
+          <Score>
+            <h3>{score}</h3>
+            <img src={star} />
+          </Score>
+        </TitleScoreContainer>
+        <Description>{getDescription(description)}</Description>
+        <Button
+          type="link"
+          to={`/restaurant/${id}`}
+          category="restaurant"
+          title={title}
+        >
           Saiba mais
         </Button>
-      ) : (
-        <Button type="link" to="/profile" category="restaurant" title={title}>
-          Saiba mais
-        </Button>
-      )}
-    </InfoContainer>
-  </RestaurantCard>
-)
+      </InfoContainer>
+    </RestaurantCard>
+  )
+}
 
 export default Restaurant
