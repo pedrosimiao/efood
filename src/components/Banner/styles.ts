@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Image = styled.div`
   width: 100%;
@@ -32,6 +32,10 @@ export const Name = styled.h6`
   font-size: 32px;
   color: #fff;
   margin-top: 156px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 28px;
+  }
 `
 
 export const Category = styled.p`

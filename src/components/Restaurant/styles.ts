@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { ButtonContainer, ButtonLink } from '../Button/styles'
 import { TagContainer } from '../Tag/styles'
 
@@ -7,6 +7,10 @@ export const RestaurantCard = styled.div`
   color: ${colors.red};
   position: relative;
   margin-bottom: 48px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 100%;
+  }
 
   img {
     margin: 0;
@@ -18,6 +22,11 @@ export const RestaurantCard = styled.div`
     display: flex;
     justify-content: center;
     align-self: center;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   ${TagContainer} {

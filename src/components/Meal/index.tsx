@@ -20,7 +20,7 @@ const Meal = ({ image, title, description, onDetailsClick }: Props) => {
   return (
     <MealCard>
       <div className="mealImg">
-        <img src={image} />
+        <img src={image} alt={title} />
       </div>
       <h2>{title}</h2>
       <p>{getDescription(description)}</p>

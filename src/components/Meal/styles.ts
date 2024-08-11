@@ -8,15 +8,18 @@ export const MealCard = styled.div`
   color: ${colors.beige};
   padding: 8px;
   margin-bottom: 32px;
+  max-width: 304px;
+  width: 100%;
+  box-sizing: border-box;
 
   .mealImg {
-    width: 304px;
+    width: 100%;
     height: 206px;
     display: flex;
     justify-content: center;
 
     img {
-      max-width: 304px;
+      max-width: 100%;
     }
   }
 
@@ -34,7 +37,7 @@ export const MealCard = styled.div`
   ${ButtonLink} {
     display: block;
     text-align: center;
-    width: 304px;
+    width: 100%;
     margin-top: 8px;
     font-size: 14px;
     font-weight: bold;

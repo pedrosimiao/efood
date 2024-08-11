@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { add, open } from '../../store/reducers/cart'
+
 import Meal from '../Meal'
 import Button from '../Button'
 import { Diner } from '../../pages/Home'
@@ -15,16 +17,17 @@ import {
   ModalImg,
   ModalDetails
 } from './styles'
+import { useDispatch } from 'react-redux'
 
 type Props = {
   meals: Diner['cardapio']
 }
 
-export const formatPrice = (preco = 0) => {
+export const formatPrice = (price = 0) => {
   return new Intl.NumberFormat('pt-br', {
     style: 'currency',
     currency: 'BRL'
-  }).format(preco)
+  }).format(price)
 }
 
 const MealsList = ({ meals }: Props) => {
@@ -41,6 +44,15 @@ const MealsList = ({ meals }: Props) => {
   const closeModal = () => {
     setSelectedMeal(null)
     setModalVisibility(false)
+  }
+
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    if (selectedMeal) {
+      dispatch(add(selectedMeal))
+      dispatch(open())
+    }
   }
 
   return (
@@ -83,7 +95,7 @@ const MealsList = ({ meals }: Props) => {
                 category="meal"
                 title="Adicionar ao carrinho"
                 type="link"
-                onClick={closeModal}
+                onClick={addToCart}
               >
                 Adicionar ao carrinho - {formatPrice(selectedMeal.preco)}
               </Button>
