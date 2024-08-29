@@ -11,6 +11,7 @@ export const MealCard = styled.div`
   max-width: 304px;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 8px;
 
   .mealImg {
     width: 100%;

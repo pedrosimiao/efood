@@ -1,5 +1,3 @@
-import { Diner } from '../../pages/Home'
-
 import Restaurant from '../Restaurant'
 
 import { Container, List } from './styles'

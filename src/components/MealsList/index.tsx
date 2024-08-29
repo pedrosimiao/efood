@@ -1,33 +1,17 @@
 import { useState } from 'react'
-
-import { add, open } from '../../store/reducers/cart'
+import { useDispatch } from 'react-redux'
 
 import Meal from '../Meal'
 import Button from '../Button'
-import { Diner } from '../../pages/Home'
+
+import { add, open } from '../../store/reducers/cart'
+import { formatPrice } from '../../utils'
 
 import close from '../../assets/images/close.png'
-
-import {
-  Container,
-  List,
-  ModalOverlay,
-  ModalContent,
-  ModalCloseButton,
-  ModalImg,
-  ModalDetails
-} from './styles'
-import { useDispatch } from 'react-redux'
+import * as S from './styles'
 
 type Props = {
   meals: Diner['cardapio']
-}
-
-export const formatPrice = (price = 0) => {
-  return new Intl.NumberFormat('pt-br', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
 }
 
 const MealsList = ({ meals }: Props) => {
@@ -57,9 +41,9 @@ const MealsList = ({ meals }: Props) => {
 
   return (
     <>
-      <Container>
+      <S.Container>
         <div className="container">
-          <List>
+          <S.List>
             {meals.map((meal) => (
               <Meal
                 key={meal.id}
@@ -69,20 +53,20 @@ const MealsList = ({ meals }: Props) => {
                 onDetailsClick={() => displayModal(meal)}
               />
             ))}
-          </List>
+          </S.List>
         </div>
-      </Container>
+      </S.Container>
       {selectedMeal && (
-        <ModalOverlay
+        <S.ModalOverlay
           className={modalVisibility ? 'visible' : ''}
           onClick={closeModal}
         >
-          <ModalContent className="container">
-            <ModalCloseButton onClick={closeModal}>
+          <S.ModalContent className="container">
+            <S.ModalCloseButton onClick={closeModal}>
               <img src={close} alt="Close" />
-            </ModalCloseButton>
-            <ModalImg src={selectedMeal.foto} alt={selectedMeal.nome} />
-            <ModalDetails>
+            </S.ModalCloseButton>
+            <S.ModalImg src={selectedMeal.foto} alt={selectedMeal.nome} />
+            <S.ModalDetails>
               <h3>{selectedMeal.nome}</h3>
               <p>
                 {selectedMeal.descricao}
@@ -99,9 +83,9 @@ const MealsList = ({ meals }: Props) => {
               >
                 Adicionar ao carrinho - {formatPrice(selectedMeal.preco)}
               </Button>
-            </ModalDetails>
-          </ModalContent>
-        </ModalOverlay>
+            </S.ModalDetails>
+          </S.ModalContent>
+        </S.ModalOverlay>
       )}
     </>
   )

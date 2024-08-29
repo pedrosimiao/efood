@@ -5,6 +5,7 @@ import { EFood } from '../Logo/styles'
 import vector from '../../assets/images/Vector.png'
 
 export const LandingHeaderBar = styled.header`
+  width: 100%;
   background-color: ${colors.beige};
   color: ${colors.red};
   height: 360px;

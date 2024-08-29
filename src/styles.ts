@@ -33,6 +33,8 @@ const GlobalStyleSheet = createGlobalStyle`
     @media (max-width: ${breakpoints.tablet}) {
       max-width: 80%;
     }
+
+
   }
 `
 

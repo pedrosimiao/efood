@@ -1,4 +1,4 @@
-import { Image, Category, Name } from './styles'
+import * as S from './styles'
 
 type BannerProps = {
   capa: string
@@ -7,11 +7,11 @@ type BannerProps = {
 }
 
 const Banner = ({ capa, tipo, titulo }: BannerProps) => (
-  <Image style={{ backgroundImage: `url(${capa})` }}>
+  <S.Image style={{ backgroundImage: `url(${capa})` }}>
     <div className="container">
-      <Category>{tipo}</Category>
-      <Name>{titulo}</Name>
+      <S.Category>{tipo}</S.Category>
+      <S.Name>{titulo}</S.Name>
     </div>
-  </Image>
+  </S.Image>
 )
 export default Banner

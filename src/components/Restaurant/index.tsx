@@ -1,17 +1,8 @@
 import Button from '../Button'
 import Tag from '../Tag'
 
-import {
-  Title,
-  RestaurantCard,
-  Score,
-  TitleScoreContainer,
-  InfoContainer,
-  Description,
-  TagsContainer
-} from './styles'
-
 import star from '../../assets/images/star-icon.png'
+import * as S from './styles'
 
 type Props = {
   id: number
@@ -33,29 +24,29 @@ const Restaurant = ({
   description
 }: Props) => {
   const getDescription = (description: string) => {
-    if (description.length > 272) {
-      return description.slice(0, 269) + '...'
+    if (description.length > 250) {
+      return description.slice(0, 250) + '...'
     }
 
     return description
   }
 
   return (
-    <RestaurantCard>
+    <S.RestaurantCard>
       <img src={image} alt={title} />
-      <TagsContainer>
+      <S.TagsContainer>
         {sugestionOfTheWeek && <Tag>Destaque da semana</Tag>}
         <Tag>{culinary}</Tag>
-      </TagsContainer>
-      <InfoContainer>
-        <TitleScoreContainer>
-          <Title>{title}</Title>
-          <Score>
+      </S.TagsContainer>
+      <S.InfoContainer>
+        <S.TitleScoreContainer>
+          <S.Title>{title}</S.Title>
+          <S.Score>
             <h3>{score}</h3>
             <img src={star} />
-          </Score>
-        </TitleScoreContainer>
-        <Description>{getDescription(description)}</Description>
+          </S.Score>
+        </S.TitleScoreContainer>
+        <S.Description>{getDescription(description)}</S.Description>
         <Button
           type="link"
           to={`/restaurant/${id}`}
@@ -64,8 +55,8 @@ const Restaurant = ({
         >
           Saiba mais
         </Button>
-      </InfoContainer>
-    </RestaurantCard>
+      </S.InfoContainer>
+    </S.RestaurantCard>
   )
 }
 

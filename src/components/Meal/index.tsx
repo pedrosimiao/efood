@@ -10,8 +10,8 @@ type Props = {
 
 const Meal = ({ image, title, description, onDetailsClick }: Props) => {
   const getDescription = (description: string) => {
-    if (description.length > 100) {
-      return description.slice(0, 165) + '...'
+    if (description.length > 150) {
+      return description.slice(0, 150) + '...'
     }
 
     return description

@@ -7,6 +7,7 @@ const RouteTrack = () => (
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/restaurant/:id" element={<Profile />} />
+    <Route path="/checkout" element={<Profile />} />
   </Routes>
 )
 

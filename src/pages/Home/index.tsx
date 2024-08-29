@@ -3,30 +3,13 @@ import RestaurantsList from '../../components/RestaurantsList'
 
 import { useGetRestaurantQuery } from '../../services/api'
 
-export type Diner = {
-  id: number
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
-  cardapio: {
-    foto: string
-    preco: number
-    id: number
-    nome: string
-    descricao: string
-    porcao: string
-  }[]
-}
+import { colors } from '../../styles'
 
 const Home = () => {
-  // const { data: restaurants, isLoading } = useGetRestaurantQuery()
   const { data: restaurants } = useGetRestaurantQuery()
 
   if (!restaurants) {
-    return <h3>Carregando...</h3>
+    return <h3 style={{ color: colors.red }}>Carregando...</h3>
   }
 
   return (

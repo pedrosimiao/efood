@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { open } from '../../store/reducers/cart'
 import { RootReducer } from '../../store'
+
+import { open } from '../../store/reducers/cart'
 
 import { LandingHeaderBar, RegularHeader } from './styles'
 import Logo from '../Logo'
@@ -33,7 +34,12 @@ const Header = () => {
     <>
       <RegularHeader>
         <div className="container">
-          <Link to="/">Restaurantes</Link>
+          <Link
+            title="Clique aqui para acessar a página de restaurantes"
+            to="/"
+          >
+            Restaurantes
+          </Link>
           <Logo />
           <a onClick={openCart}>{items.length} produto(s) no carrinho</a>
         </div>
