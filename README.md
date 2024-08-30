@@ -97,4 +97,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📞 Contato
 
-Pedro Simão - [LinkedIn](https://www.linkedin.com/in/pedrosimiao) - [Email](mailto:pedrolumiere@gmail.com)
+Pedro Simão - [LinkedIn](https://www.linkedin.com/in/pedro-simiao/)
