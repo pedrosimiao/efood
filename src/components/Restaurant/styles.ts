@@ -18,7 +18,7 @@ export const RestaurantCard = styled.div`
     display: block;
     width: 472px;
     height: 217px;
-    object-fit: fill;
+    object-fit: cover;
     display: flex;
     justify-content: center;
     align-self: center;
