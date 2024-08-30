@@ -91,10 +91,6 @@ Contribuições são sempre bem-vindas! Para contribuir com o projeto:
 4. Faça push para a branch (`git push origin feature/nome-da-feature`).
 5. Abra um Pull Request.
 
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 📞 Contato
 
 Pedro Simão - [LinkedIn](https://www.linkedin.com/in/pedro-simiao/)
